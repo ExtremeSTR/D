@@ -2,15 +2,15 @@ FROM ubuntu:latest
 MAINTAINER beta
 
 # Install components
-RUN apt-get update
-RUN apt-get -y install apache2
+RUN sudo apt-get update
+RUN sudo apt-get -y install apache2
 RUN useradd -m -s /bin/nologin deluge
 RUN touch /var/log/deluged.log
 RUN touch /var/log/deluge-web.log
 RUN chown deluge:deluge /var/log/deluge*
-RUN apt-get update
-RUN apt-get -y install deluged
-RUN apt-get -y install deluge-webui
+RUN sudo apt-get update
+RUN sudo apt-get -y install deluged
+RUN sudo apt-get -y install deluge-webui
 ADD default /etc/
 ADD init.d /etc/
 RUN chmod a+x /etc/init.d/deluge-daemon
