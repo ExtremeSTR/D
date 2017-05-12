@@ -8,7 +8,6 @@ RUN useradd -m -s /bin/nologin deluge
 RUN touch /var/log/deluged.log
 RUN touch /var/log/deluge-web.log
 RUN chown deluge:deluge /var/log/deluge*
-RUN sudo apt-get update
 RUN sudo apt-get -y install deluged
 RUN sudo apt-get -y install deluge-webui
 ADD default /etc/
