@@ -1,5 +1,5 @@
-FROM debian:jessie
-MAINTAINER Jake <i@am.so-aweso.me>
+FROM ubuntu:latest
+MAINTAINER beta
 
 # Install components
 RUN apt-get update
@@ -16,7 +16,7 @@ RUN wget --output-document="/etc/default/deluge-daemon" https://raw.githubuserco
 RUN wget --output-document="/etc/init.d/deluge-daemon" https://raw.githubusercontent.com/ExtremeSTR/deluge-installer/master/etc/init.d/deluge-daemon
 RUN chmod a+x /etc/init.d/deluge-daemon
 Run update-rc.d deluge-daemon defaults
-Run chmod 777 /var/www/html
+Run chmod 444 /var/www/html
 
 WORKDIR /home/deluge
 
