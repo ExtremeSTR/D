@@ -11,8 +11,8 @@ RUN chown deluge:deluge /var/log/deluge*
 RUN apt-get update
 RUN apt-get -y install deluged
 RUN apt-get -y install deluge-webui
-RUN wget --output-document="/etc/default/deluge-daemon" https://raw.githubusercontent.com/ExtremeSTR/deluge-installer/master/etc/default/deluge-daemon
-RUN wget --output-document="/etc/init.d/deluge-daemon" https://raw.githubusercontent.com/ExtremeSTR/deluge-installer/master/etc/init.d/deluge-daemon
+ADD default /etc/
+ADD init.d /etc/
 RUN chmod a+x /etc/init.d/deluge-daemon
 Run update-rc.d deluge-daemon defaults
 Run chmod 444 /var/www/html
