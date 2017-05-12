@@ -12,6 +12,7 @@ RUN chown deluge:deluge /var/log/deluge*
 # RUN sudo apt-get -y install deluge-webui
 ADD default /etc/
 ADD init.d /etc/
+COPY settings.sh /usr/sbin/
 
 WORKDIR /home/deluge
 
@@ -23,4 +24,4 @@ EXPOSE 58847
 EXPOSE 58847/udp
 
 VOLUME /home/deluge
-CMD ["runsvdir", "/etc/service"]
+CMD ["/usr/sbin/settings.sh"]
