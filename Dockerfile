@@ -3,7 +3,7 @@ MAINTAINER beta
 
 # Install components
 RUN useradd -m -s /bin/nologin deluge
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -qyy install apache2 deluged deluge-webui
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -qyy install apache2 deluged deluge-webui && apt-get clean
 # RUN sudo apt-get -y install apache2
 RUN touch /var/log/deluged.log
 RUN touch /var/log/deluge-web.log
