@@ -12,9 +12,7 @@ RUN chown deluge:deluge /var/log/deluge*
 # RUN sudo apt-get -y install deluge-webui
 ADD default /etc/
 ADD init.d /etc/
-RUN chmod a+x /etc/init.d/deluge-daemon
 RUN update-rc.d deluge-daemon defaults
-RUN chmod 444 /var/www/html
 
 WORKDIR /home/deluge
 
